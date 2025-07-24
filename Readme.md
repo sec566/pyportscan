@@ -98,6 +98,6 @@ To improve speed, you could implement multi-threading in the future.
 This project is open-source and available under the MIT License.
 
 👨‍💻 Author
-Created by [Your Name or GitHub Username]
+Created by sec566
 
 Contributions, feedback, or suggestions are welcome!
