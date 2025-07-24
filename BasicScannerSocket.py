@@ -1,7 +1,25 @@
 import socket
 
 target = input("Enter IP Address: ")
-ports = [21,22,23,53,80,443,1433,3000,8080]
+print("Choose scan mode :")
+print("1. Default ports :21,22,23,53,80,443,1433,3000,8080")
+print("2. Custom range of ports :")
+print("3. Custom single port :")
+
+choice = input("Enter yout choice (1/2/3):")
+if choice == '1':
+    ports = [21,22,23,53,80,443,1433,3000,8080]
+elif choice == '2':
+    start_port = int(input("Enter start port :"))
+    end_port = int(input("Enter end port :"))
+    ports = range (start_port,end_port+1)
+elif choice == '3':
+    port = int(input("Enter port ton scan :"))
+    ports = [port]
+else:
+    print("Invalid choice... !")
+    exit()
+
 
 print(f"Scanning {target} \n")
 
