@@ -1,4 +1,5 @@
 import socket
+from datetime import datetime
 
 def scan_port(target,port,file):
     try: 
@@ -47,11 +48,13 @@ elif choice == '3':
 else:
     print("Invalid choice... !")
     exit()
-
-
 print(f"Scanning {target} \n")
 
-with open("Scan_result.txt","w") as f:
+filename = f"Scan_{target}_{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.txt"
+
+with open(filename,"w") as f:
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    f.write(f"Scan started at : {timestamp} \n\n")
     f.write(f"Scan result for {target}:\n\n")
     for port in ports:
         scan_port(target_ip,port,f)
