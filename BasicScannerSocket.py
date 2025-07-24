@@ -16,7 +16,12 @@ def scan_port(target,port):
         print("Error in scanning port {port} : {e}")
 
 
-target = input("Enter IP Address: ")
+target = input("Enter Host name or  IP Address: ")
+try:
+    target = socket.gethostbyname(target)
+except socket.gaierror:
+    print("Invalid Host ...!") 
+    
 print("Choose scan mode :")
 print("1. Default ports :21,22,23,53,80,443,1433,3000,8080")
 print("2. Custom range of ports :")
